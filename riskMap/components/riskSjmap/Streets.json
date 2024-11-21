@@ -1,0 +1,118 @@
+{
+  "version": 8,
+  "sprite": "aegis://sprites/aegis/Streets",
+  "glyphs": "aegis://fonts/aegis/{fontstack}/{range}.pbf",
+  "sources": {
+    "epgis": {
+      "type": "vector",
+      "url": "aegis://aegis.Streets.KxMK"
+    }
+  },
+  "layers": [
+    {
+      "type": "background",
+      "id": "background",
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "background-color": "#f7f7f7"
+      }
+    },
+    {
+      "id": "Sea/1",
+      "type": "fill",
+      "source": "epgis",
+      "source-layer": "Sea",
+      "maxzoom": 9,
+      "layout": {},
+      "paint": {
+        "fill-color": "#b2cefe"
+      }
+    },
+    {
+      "id": "Boundary/Province",
+      "type": "line",
+      "source": "epgis",
+      "source-layer": "Boundary",
+      "filter": [
+        "==",
+        "_symbol",
+        0
+      ],
+      "minzoom": 3,
+      "maxzoom": 18,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-opacity": 1,
+        "line-color": "#989ea6",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "Boundary/HongKong",
+      "type": "line",
+      "source": "epgis",
+      "source-layer": "Boundary",
+      "filter": [
+        "==",
+        "_symbol",
+        1
+      ],
+      "minzoom": 3,
+      "maxzoom": 18,
+      "layout": {
+        "line-join": "round"
+      },
+      "paint": {
+        "line-opacity": 1,
+        "line-color": "#989ea6",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "Boundary/NationC",
+      "type": "line",
+      "source": "epgis",
+      "source-layer": "Boundary",
+      "filter": [
+        "==",
+        "_symbol",
+        7
+      ],
+      "maxzoom": 18,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-opacity": 1,
+        "line-color": "#e04747",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          1,
+          4,
+          2,
+          5,
+          3,
+          7,
+          4
+        ]
+      }
+    }
+  ],
+  "created": "2024-06-17 20:04:04.251805",
+  "id": "Streets.KxMK",
+  "modified": "2024-06-17 20:04:04.251805",
+  "owner": "aegis",
+  "draft": true
+}
